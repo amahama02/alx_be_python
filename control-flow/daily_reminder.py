@@ -1,16 +1,17 @@
+# daily_reminder.py
 
 def create_daily_reminder():
-    task = input("Enter your task description: ").strip()
+    task = input ("Enter your task description: ").strip ()
     while True:
-        priority = input("Enter priority (high, medium, low): ").strip().lower()
+        priority = input ("Enter priority (high, medium, low): ").strip().lower()
         if priority in ['high', 'medium', 'low']:
-            break
+            Break
         else:
             print("Invalid priority. Please choose 'high', 'medium', or 'low'.")
     while True:
-        time_bound = input("Is this task time-bound? (yes/no): ").strip().lower()
+        time_bound = input ("Is this task time-bound? (yes/no): ").strip().lower()
         if time_bound in ['yes', 'no']:
-            break
+            Break
         else:
             print("Invalid input. Please answer 'yes' or 'no'.")
     reminder_message = f"Reminder: '{task}' is a {priority} priority task"
@@ -36,4 +37,4 @@ def create_daily_reminder():
 
 # Ensure the function runs when the script is executed
 if __name__ == "__main__":
-    create_daily_reminder()
+    create_daily_reminder ()
