@@ -1,26 +1,23 @@
 # weather_advice.py
 
-def get_weather_advice():
+def get_clothing_recommendation():
     """
-    Asks the user about the current weather and provides clothing advice.
+    Asks the user about the current weather conditions and provides clothing recommendations.
     """
-    # Prompt the user for the weather input
-    # .strip() removes leading/trailing whitespace
-    # .lower() converts input to lowercase for consistent comparison
+    # Prompt the user for the weather input, ensuring it's stripped of whitespace and in lowercase
     weather=input("What's the weather like today? (sunny/rainy/cold):").strip().lower()
 
-    # Provide advice based on the weather
+    # Provide clothing recommendations based on the user's input
     if weather=='sunny':
         print("Wear a t-shirt and sunglasses.")
     elif weather=='rainy':
-        print("Take an umbrella and a raincoat.")
-    elif weather=='snowy':
-        print("Wear a warm coat and boots.")
-    elif weather=='cloudy':
-        print("A light jacket might be good.")
+        print("Don't forget your umbrella and a raincoat.")
+    elif weather=='cold':
+        print("Make sure to wear a warm coat and a scarf.")
     else:
-        print("Enjoy the day! I don't have specific advice for that weather.")
+        # Handle unexpected or invalid input
+        print("Sorry, I don't have recommendations for this weather.")
 
-# Main block to run the function when the script is executed
+# Main execution block: calls the function when the script is run directly
 if __name__ == "__main__":
-    get_weather_advice()
+    get_clothing_recommendation()
