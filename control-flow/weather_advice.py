@@ -1,3 +1,4 @@
+# weather_advice.py
 
 def get_weather_advice():
     """
@@ -6,7 +7,7 @@ def get_weather_advice():
     # Prompt the user for the weather input
     # .strip() removes leading/trailing whitespace
     # .lower() converts input to lowercase for consistent comparison
-    weather=input("What's the weather like today? (e.g., sunny, rainy, snowy): ").strip().lower()
+    weather=input("What's the weather like today? (sunny/rainy/cold):").strip().lower()
 
     # Provide advice based on the weather
     if weather=='sunny':
