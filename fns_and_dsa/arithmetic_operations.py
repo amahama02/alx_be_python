@@ -1,3 +1,5 @@
+
+
 # arithmetic_operations.py
 
 def perform_operation(num1, num2, operation):
@@ -12,17 +14,16 @@ def perform_operation(num1, num2, operation):
     Returns:
         float or str: The result of the operation, or an error message for division by zero.
     """
-    match operation.lower():
-        case 'add':
+    if operation =='add':
             return num1 + num2
-        case 'subtract':
+        elif operation == 'subtract':
             return num1 - num2
-        case 'multiply':
+        elif operation == 'multiply':
             return num1 * num2
-        case 'divide':
+        elif operation == 'divide':
             if num2 == 0:
                 return "Cannot divide by zero."
             else:
                 return num1 / num2
-        case _:
+        else _:
             return "Invalid operation type."
