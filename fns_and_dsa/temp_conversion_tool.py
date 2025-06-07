@@ -1,6 +1,6 @@
-# Define global conversion factors
-# These variables are defined outside any function, making them accessible throughout the script.
+
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
+
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
 def convert_to_celsius(fahrenheit):
