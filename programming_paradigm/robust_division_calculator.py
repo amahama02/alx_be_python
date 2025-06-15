@@ -1,4 +1,3 @@
-
 def safe_divide(numerator, denominator):
     """
     Performs division of two numbers, robustly handling potential errors.
@@ -23,5 +22,6 @@ def safe_divide(numerator, denominator):
         result = num / den
         return f"Result: {result}"
     except ValueError:
+        # --- THIS IS THE MODIFIED LINE ---
         # Catch error if conversion to float fails (non-numeric input)
-        return "Error: Invalid input. Please enter numeric values."
+        return "Error: Please enter numeric values only."
