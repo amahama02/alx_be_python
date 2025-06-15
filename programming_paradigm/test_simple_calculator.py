@@ -15,7 +15,7 @@ class TestSimpleCalculator(unittest.TestCase):
         """
         self.calc = SimpleCalculator()
 
-    # --- Les noms et signatures des méthodes de test sont des correspondances exactes. ---
+    # --- Les noms et signatures des méthodes de test sont des correspondances exactes comme demandé. ---
 
     def test_addition(self):
         """Test the 'add' method with various numbers, including positives, negatives, and zeros."""
@@ -47,11 +47,11 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.multiply(1, 1), 1)
         self.assertEqual(self.calc.multiply(10, 0), 0)
 
-    def test_divide(self):
+    def test_division(self):
         """
         Test the 'divide' method with various valid inputs and crucial edge cases like division by zero.
         """
-        self.assertEqual(self.calc.divide(10, 2), 5.0)      # Division normale
+        self.assertEqual(self.calc.divide(10, 2), 5.0)      # Normal division
         self.assertEqual(self.calc.divide(5, 2), 2.5)       # Division avec résultat décimal
         self.assertEqual(self.calc.divide(-10, 2), -5.0)    # Division avec résultat négatif
         self.assertEqual(self.calc.divide(0, 5), 0.0)       # Zéro divisé par un nombre non nul
