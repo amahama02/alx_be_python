@@ -15,7 +15,7 @@ class TestSimpleCalculator(unittest.TestCase):
         """
         self.calc = SimpleCalculator()
 
-    # --- Test method names and signatures are exact matches as requested by the checker. ---
+    # --- Les noms et signatures des méthodes de test sont des correspondances exactes. ---
 
     def test_addition(self):
         """Test the 'add' method with various numbers, including positives, negatives, and zeros."""
@@ -37,7 +37,7 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.subtract(10.5, 2.5), 8.0)
         self.assertEqual(self.calc.subtract(7, 7), 0)
 
-    def test_multiply(self):
+    def test_multiplication(self):
         """Test the 'multiply' method with various numbers, including positives, negatives, and zeros."""
         self.assertEqual(self.calc.multiply(2, 3), 6)
         self.assertEqual(self.calc.multiply(-1, 5), -5)
@@ -51,17 +51,17 @@ class TestSimpleCalculator(unittest.TestCase):
         """
         Test the 'divide' method with various valid inputs and crucial edge cases like division by zero.
         """
-        self.assertEqual(self.calc.divide(10, 2), 5.0)      # Normal division
-        self.assertEqual(self.calc.divide(5, 2), 2.5)       # Division with decimal result
-        self.assertEqual(self.calc.divide(-10, 2), -5.0)    # Division with negative result
-        self.assertEqual(self.calc.divide(0, 5), 0.0)       # Zero divided by a non-zero number
-        self.assertEqual(self.calc.divide(7, 7), 1.0)       # Division by itself
+        self.assertEqual(self.calc.divide(10, 2), 5.0)      # Division normale
+        self.assertEqual(self.calc.divide(5, 2), 2.5)       # Division avec résultat décimal
+        self.assertEqual(self.calc.divide(-10, 2), -5.0)    # Division avec résultat négatif
+        self.assertEqual(self.calc.divide(0, 5), 0.0)       # Zéro divisé par un nombre non nul
+        self.assertEqual(self.calc.divide(7, 7), 1.0)       # Division par lui-même
 
-        # Test the critical edge case: division by zero
-        self.assertIsNone(self.calc.divide(5, 0))    # Ensure it returns None when dividing positive by zero
-        self.assertIsNone(self.calc.divide(0, 0))    # Test 0 divided by 0 (should also be None as per spec)
-        self.assertIsNone(self.calc.divide(-10, 0))  # Test negative divided by zero
+        # Test du cas limite critique : division par zéro
+        self.assertIsNone(self.calc.divide(5, 0))    # Assure qu'il retourne None lors de la division d'un positif par zéro
+        self.assertIsNone(self.calc.divide(0, 0))    # Test 0 divisé par 0 (devrait aussi être None selon la spécification)
+        self.assertIsNone(self.calc.divide(-10, 0))  # Test négatif divisé par zéro
 
-# This standard block allows you to run the tests directly from the command line.
+# Ce bloc standard permet d'exécuter les tests directement depuis la ligne de commande.
 if __name__ == '__main__':
     unittest.main()
