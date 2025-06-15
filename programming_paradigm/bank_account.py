@@ -19,24 +19,28 @@ class BankAccount:
     def deposit(self, amount):
         """
         Adds the specified amount to the account balance.
+        Does NOT print success messages directly.
 
         Args:
             amount (float): The amount to deposit. Must be positive.
+        
+        Returns:
+            bool: True if the deposit was successful, False otherwise.
         """
         if not isinstance(amount, (int, float)):
-            print("Deposit amount must be a number.")
-            return
+            # print("Deposit amount must be a number.") # Removed print
+            return False # Indicate failure
         if amount <= 0:
-            print("Deposit amount must be positive.")
-            return
+            # print("Deposit amount must be positive.") # Removed print
+            return False # Indicate failure
 
         self.account_balance += amount
-        # Corrected print format to match "Deposited: $67.0"
-        print(f"Deposited: ${amount:.1f}")
+        return True # Indicate success
 
     def withdraw(self, amount):
         """
         Deducts the specified amount from the account balance if funds are sufficient.
+        Does NOT print success/failure messages directly, only returns status.
 
         Args:
             amount (float): The amount to withdraw. Must be positive.
@@ -45,25 +49,20 @@ class BankAccount:
             bool: True if the withdrawal was successful, False otherwise.
         """
         if not isinstance(amount, (int, float)):
-            print("Withdrawal amount must be a number.")
+            # print("Withdrawal amount must be a number.") # Removed print
             return False
         if amount <= 0:
-            print("Withdrawal amount must be positive.")
+            # print("Withdrawal amount must be positive.") # Removed print
             return False
         if self.account_balance >= amount:
             self.account_balance -= amount
-            # The problem description didn't specify output for withdraw,
-            # but usually a success message is printed.
-            print(f"Withdrew: ${amount:.1f}") # Added for clarity, format for consistency
-            return True
+            return True # Indicate success
         else:
-            print("Insufficient funds.")
-            return False
+            return False # Indicate failure (insufficient funds)
 
     def display_balance(self):
         """
-        Prints the current account balance in a user-friendly format,
-        including the specific phrase "Current Balance:".
+        Prints the current account balance in a user-friendly format.
+        This method is still responsible for printing its output.
         """
-        # Corrected print format to match "Current Balance:"
         print(f"Current Balance: ${self.account_balance:.2f}")
