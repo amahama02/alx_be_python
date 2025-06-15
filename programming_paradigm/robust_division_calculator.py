@@ -20,8 +20,8 @@ def safe_divide(numerator, denominator):
 
         # Perform division
         result = num / den
-        return f"Result: {result}"
+        # --- C'EST LA LIGNE MODIFIÉE ---
+        return f"The result of the division is {result}"
     except ValueError:
-        # --- THIS IS THE MODIFIED LINE ---
         # Catch error if conversion to float fails (non-numeric input)
         return "Error: Please enter numeric values only."
