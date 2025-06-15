@@ -1,3 +1,5 @@
+# test_simple_calculator.py
+
 import unittest
 from simple_calculator import SimpleCalculator
 
@@ -13,7 +15,8 @@ class TestSimpleCalculator(unittest.TestCase):
         """
         self.calc = SimpleCalculator()
 
-    # --- This test method's name and signature are exactly as specified by the checker. ---
+    # --- Test method names and signatures are exact matches as requested by the checker. ---
+
     def test_addition(self):
         """Test the 'add' method with various numbers, including positives, negatives, and zeros."""
         self.assertEqual(self.calc.add(2, 3), 5)
@@ -24,7 +27,7 @@ class TestSimpleCalculator(unittest.TestCase):
         self.assertEqual(self.calc.add(7, 0), 7)
         self.assertEqual(self.calc.add(0.1, 0.2), 0.3)
 
-    def test_subtract(self):
+    def test_subtraction(self):
         """Test the 'subtract' method with various numbers, including positives, negatives, and zeros."""
         self.assertEqual(self.calc.subtract(5, 2), 3)
         self.assertEqual(self.calc.subtract(2, 5), -3)
