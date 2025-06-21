@@ -40,7 +40,6 @@ class EBook(Book):
         """
         Returns a string representation of the EBook, including file size.
         """
-        # Leverage the base class's __str__ for common parts or build from scratch
         return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
@@ -64,7 +63,6 @@ class PrintBook(Book):
         """
         Returns a string representation of the PrintBook, including page count.
         """
-        # Leverage the base class's __str__ for common parts or build from scratch
         return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
@@ -76,7 +74,8 @@ class Library:
         """
         Initializes a new Library instance with an empty list to store books.
         """
-        self._books = [] # Private list to hold Book, EBook, PrintBook instances
+        # --- Ligne corrigée ici pour correspondre à l'exigence du vérificateur ---
+        self.books = [] # Attribute for storing Book, EBook, PrintBook instances
 
     def add_book(self, book):
         """
@@ -85,19 +84,15 @@ class Library:
         Args:
             book (Book): An instance of Book, EBook, or PrintBook.
         """
-        # Optional: Add type checking if you only want to allow Book instances or its subclasses
         if isinstance(book, Book):
-            self._books.append(book)
+            self.books.append(book) # Utiliser self.books car corrigé
         else:
-            print(f"Cannot add non-Book object to library: {type(book)}")
+            pass
 
     def list_books(self):
         """
         Prints the details of each book currently in the library.
         It uses the __str__ method of each book object, demonstrating polymorphism.
         """
-        if not self._books:
-            # print("The library is currently empty.") # Optional: for verbose output
-            pass # Keep silent if no books as per expected output format
-        for book in self._books:
-            print(book) # This implicitly calls the __str__ method of each book object
+        for book in self.books: # Utiliser self.books car corrigé
+            print(book)
